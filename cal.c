@@ -43,6 +43,7 @@ void cal_inter(GHashTable *g1_unique_chunks, GHashTable *g2_unique_chunks, struc
 		}
 
 		if (NULL == g_hash_table_lookup(g2_unique_chunks, &s1[a].fp)) {
+			a++;
 			continue;
 		}
 
@@ -52,6 +53,7 @@ void cal_inter(GHashTable *g1_unique_chunks, GHashTable *g2_unique_chunks, struc
 		scommon11[*sc1_count].cid = s1[a + i].cid;
 		scommon11[*sc1_count].fid = s1[a + i].fid;
 		scommon11[*sc1_count].order = s1[a + i].order;
+		a++;
 	}
 
 	scommon11 = (struct fp_info *)realloc(scommon11, *sc1_count * sizeof(struct fp_info));

@@ -181,7 +181,7 @@ void intersection(const char *path1, const char *path2)
 	char g1_ghash_file[128] = {0};
 	sprintf(g1_ghash_file, "%s/ghash_file", path1);
 	if (0 != access(g1_ghash_file, F_OK)) {
-		g2_unique_chunks = g_hash_table_new_full(g_int64_hash, g_fingerprint_equal, NULL, free_chunk);
+		g1_unique_chunks = g_hash_table_new_full(g_int64_hash, g_fingerprint_equal, NULL, free_chunk);
 		for (i = 0; i < s1_count; i++) {
 			struct chunk *ruc;	
 			ruc = g_hash_table_lookup(g1_unique_chunks, &s1[i].fp);
