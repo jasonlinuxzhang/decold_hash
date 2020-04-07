@@ -1,1 +1,1 @@
-# decold_hash
+# decold
